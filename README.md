@@ -35,7 +35,7 @@
     ```
 
 ### Configuracnion Base de Datos `/application.propertis`
-(Archivo de configuracion Spring Boot)[appication.properties]
+[Archivo de configuracion Spring Boot](application.properties)
 
 ### Creaccion de vista JSP (ejemplo) `/main/webapp/WEB-INF`
 Lecutra solo de archivos `.jsp` sirve para leer codigo java dentro de html.
