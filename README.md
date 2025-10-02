@@ -59,12 +59,36 @@
     spring.datasource.username=root
     spring.datasource.password=
     spring.datasource.driver-class-name=con.mysql.cj.jdbc.Driver
-    spring.jpa.hibernate.ddl-auto=none //si la base de datos ya esta creada
     spring.jpa.hibernate.ddl-auto=update //si la base de datos NO esta creada
     spring.jpa.show-sql=true 
 
 ```
 
+_base de datos esta creada_
+```
+    spring.datasource.url=jdbc:mysql://localhost:3306/nombre_bd
+    spring.jpa.hibernate.ddl-auto=none //si la base de datos ya esta creada
+```
+
 ### Creaccion de vista JSP (ejemplo) `/main/webapp/WEB-INF`
 
 Lecutra solo de archivos `.jsp` sirve para leer codigo java dentro de html.
+
+Para agregar las libreria en el archivo jsp
+`<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>`
+
+Expression Language = _lenguaje de expresion de JSPs para acceder a variables y mas caracteristicas_ `${}`
+
+- Agregar las url de las aplicaciones
+
+```
+    //forma 1
+    <c:set var="urlInicio">
+        <c:url value="${application.contextPath}/" />
+    </c:set>
+
+    //forma2
+    <%-- Agregar las URL de las aplicaciones --%>
+    <c:set var="urlInicio" value="${pageContext.request.contextPath}/" />
+    <c:set var="urlAgregar" value="${pageContext.request.contextPath}/agregar" />
+```
